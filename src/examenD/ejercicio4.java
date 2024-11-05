@@ -1,4 +1,4 @@
-package examen1;
+package examenD;
 import java.util.Scanner;
 public class ejercicio4 {
     public static void main(String[] args) {
