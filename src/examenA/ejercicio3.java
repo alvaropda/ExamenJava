@@ -32,7 +32,7 @@ public class ejercicio3 {
 
         while (n % 10 != 0 && flag){
             if (n / 10 > 0) {
-                suma += n / 10;
+                suma += n % 10;
                 nanterior = n;
                 n = n / 10;
             }
