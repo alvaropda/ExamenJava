@@ -2,26 +2,34 @@ package examenD;
 import java.util.Scanner;
 public class ejercicio4 {
     public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
 
-    System.out.print("Dime el primer nº: ");
-    int a = sc.nextInt();
-    System.out.print("Dime el segundo nº: ");
-    int b = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Dime un nº: ");
+        int n = sc.nextInt();
+        int nInicial = n;
+        int digito = 0;
+        int cnt = 0;
+        int suma = 0;
 
-    int caja = 0;
+        do {
+            digito = n % 10;
+            n /= 10;
+            cnt++;
 
-    if (b == 0)
-        System.out.println("El MCD es "+a);
+        }while(n > 0);
 
-    else if (b > 0){
+        n = nInicial;
 
-        while (a % b != 0){
+        do {
+            digito = n % 10;
+            n /= 10;
+            suma += Math.pow(digito, cnt);
 
-            caja = b;
-            b = a % b;
-            a = caja;
-        }
+        }while(n > 0);
+
+        if (suma == nInicial)
+            System.out.println("Es Armstrong");
+        else
+            System.out.println("No es Armstrong");
     }
-    System.out.println(b);}
 }
