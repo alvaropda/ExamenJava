@@ -6,32 +6,32 @@ public class ejercicio4 {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.print("Escribe un nº: ");
+        System.out.print("Dime un nº: ");
         int n = sc.nextInt();
-        int caja = n;
-        int caja2 = n;
-        int cnt = 1;
+        int nInicial = n;
+        int digito = 0;
+        int cnt = 0;
         int suma = 0;
 
-        while (n / 10 != 0){
+        do {
+            digito = n % 10;
+            n /= 10;
             cnt++;
-            n = n % 10;
-        }
 
-        n = caja;
-        caja = caja2;
+        }while(n > 0);
 
-        while (caja / 10 != 0){
-            caja = n % 10;
-            n = n / 10;
-            suma += Math.pow(caja,cnt);
-        }
+        n = nInicial;
 
-        suma += Math.pow(caja, cnt);
+        do {
+            digito = n % 10;
+            n /= 10;
+            suma += Math.pow(digito, cnt);
 
-        if (caja2 == suma)
-            System.out.println("es");
+        }while(n > 0);
+
+        if (suma == nInicial)
+            System.out.println("Es Armstrong");
         else
-            System.out.println("No es");
+            System.out.println("No es Armstrong");
     }
 }

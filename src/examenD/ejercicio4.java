@@ -1,35 +1,28 @@
 package examenD;
+
 import java.util.Scanner;
+
 public class ejercicio4 {
+
     public static void main(String[] args) {
+        int num1;
+        int num2;
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Dime un nº: ");
-        int n = sc.nextInt();
-        int nInicial = n;
-        int digito = 0;
-        int cnt = 0;
-        int suma = 0;
-
+        Scanner scanner = new Scanner(System.in);
         do {
-            digito = n % 10;
-            n /= 10;
-            cnt++;
+            System.out.println("Ingresa el primer número:");
+            num1 = scanner.nextInt();
+            System.out.println("Ingresa el segundo número:");
+            num2 = scanner.nextInt();
+        }while (num1 < 0 || num2 < 0);
 
-        }while(n > 0);
+        while (num2 != 0){
+            int temp = num2;
+            num2 = num1 % num2;
+            num1 = temp;
+        }
 
-        n = nInicial;
-
-        do {
-            digito = n % 10;
-            n /= 10;
-            suma += Math.pow(digito, cnt);
-
-        }while(n > 0);
-
-        if (suma == nInicial)
-            System.out.println("Es Armstrong");
-        else
-            System.out.println("No es Armstrong");
+        int mcd = num1;
+        System.out.println("El máximo común divisor es: " + mcd);
     }
 }

@@ -19,6 +19,6 @@ public class ejercicio4 {
             System.out.print(conten);
         }
         conten = n % 10;
-        System.out.print(conten+" Es el nº invertido1");
+        System.out.print(conten+" Es el nº invertido");
     }
 }
